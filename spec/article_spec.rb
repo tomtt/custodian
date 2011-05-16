@@ -37,7 +37,7 @@ describe "Counting results for a particular query" do
   before(:each) do
     Custodian::Article.stub!(:count_tags).and_return(Hpricot(File.open(File.dirname(__FILE__) + '/search.xml')).search("/search").first.attributes["count"].to_i)
   end
-  
+
   it "should return the total number of available results for a query" do
     Custodian::Article.count_tags(:q => "uk").should == 1007029
   end
@@ -52,7 +52,7 @@ describe "An article" do
   it "should return the innerHTML of a single xml field on method_missing" do
     @article.publication.should == "guardian.co.uk"
   end
-  
+
   it "should replace section-name with section-name on method_missing" do
     @article.section_name.should == "Media"
   end

@@ -3,35 +3,35 @@ $:.unshift(File.dirname(__FILE__)) unless
 
 module Custodian
   VERSION = '0.0.5'
-  
+
   @@proxy_addr = nil
   @@proxy_port = nil
   @@api_key = nil
-  
+
   def self.proxy_addr
     @@proxy_addr
   end
-  
+
   def self.proxy_port
     @@proxy_port
   end
-  
+
   def self.proxy_addr=(proxy_addr)
     @@proxy_addr = proxy_addr
   end
-  
+
   def self.proxy_port=(proxy_port)
     @@proxy_port = proxy_port
   end
-  
+
   def self.api_key
     @@api_key
   end
-  
+
   def self.api_key=(api_key)
     @@api_key = api_key
   end
-  
+
 end
 
 require 'net/http'
